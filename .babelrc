@@ -1,12 +1,18 @@
+// {
+//     "presets": [
+//         [
+//             "env",
+//             {
+//                 "targets": {
+//                     "node": "current"
+//                 }
+//             }
+//         ]
+//     ]
+// }
 {
     "presets": [
-        [
-            "env",
-            {
-                "targets": {
-                    "node": "current"
-                }
-            }
-        ]
+        "es2015",
+        "stage-2"
     ]
 }
