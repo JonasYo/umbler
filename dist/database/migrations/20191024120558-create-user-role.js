@@ -1,0 +1,45 @@
+'use strict';
+
+module.exports = {
+  up: function up(queryInterface, Sequelize) {
+    return queryInterface.createTable('user_roles', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'users', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      role_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'roles', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      is_actived: {
+        type: Sequelize.TINYINT,
+        allowNull: false,
+        defaultValue: '1'
+      },
+      created_at: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updated_at: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  down: function down(queryInterface) {
+    return queryInterface.dropTable('user_roles');
+  }
+};
+//# sourceMappingURL=20191024120558-create-user-role.js.map
