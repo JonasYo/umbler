@@ -1,6 +1,3 @@
-'use strict';
-
-var dotenv = require('dotenv');
+"use strict";const dotenv = require('dotenv');
 
 dotenv.config({ path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env' });
-//# sourceMappingURL=bootstrap.js.map

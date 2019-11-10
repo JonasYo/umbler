@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/server.js"],"names":["port","process","env","PORT","app","listen"],"mappings":";;AAAA;;;;;;AAEA,IAAMA,OAAOC,QAAQC,GAAR,CAAYC,IAAZ,IAAoB,IAAjC;;AAEAC,cAAIC,MAAJ,CAAWL,IAAX","file":"server.js","sourcesContent":["import app from './app';\r\n\r\nconst port = process.env.PORT || 3000;\r\n\r\napp.listen(port);\r\n"]}

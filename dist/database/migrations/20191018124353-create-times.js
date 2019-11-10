@@ -1,34 +1,31 @@
-'use strict';
-
-module.exports = {
-  up: function up(queryInterface, Sequelize) {
+"use strict";module.exports = {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('times', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       hour: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       is_actived: {
         type: Sequelize.TINYINT,
-        defaultValue: '1'
+        defaultValue: '1',
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
-  down: function down(queryInterface) {
+  down: queryInterface => {
     return queryInterface.dropTable('times');
-  }
+  },
 };
-//# sourceMappingURL=20191018124353-create-times.js.map

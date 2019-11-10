@@ -1,10 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});exports. default = {
   secret: process.env.APP_SECRET,
-  expiresIn: '7d'
+  expiresIn: '7d',
 };
-//# sourceMappingURL=auth.js.map

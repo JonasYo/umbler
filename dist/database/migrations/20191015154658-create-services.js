@@ -1,46 +1,43 @@
-'use strict';
-
-module.exports = {
-  up: function up(queryInterface, Sequelize) {
+"use strict";module.exports = {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('services', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       description: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       price: {
         type: Sequelize.FLOAT,
-        allowNull: false
+        allowNull: false,
       },
       duration: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       is_actived: {
         type: Sequelize.TINYINT,
-        defaultValue: '1'
+        defaultValue: '1',
       },
       created_at: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
   },
-  down: function down(queryInterface) {
+  down: queryInterface => {
     return queryInterface.dropTable('services');
-  }
+  },
 };
-//# sourceMappingURL=20191015154658-create-services.js.map

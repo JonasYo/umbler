@@ -1,45 +1,42 @@
-'use strict';
-
-module.exports = {
-  up: function up(queryInterface, Sequelize) {
+"use strict";module.exports = {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('tokens', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
       },
       token: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       type: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       is_revoked: {
         type: Sequelize.TINYINT,
-        defaultValue: '0'
+        defaultValue: '0',
       },
       created_at: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
   },
-  down: function down(queryInterface) {
+  down: queryInterface => {
     return queryInterface.dropTable('tokens');
-  }
+  },
 };
-//# sourceMappingURL=20191029203204-create-tokens.js.map

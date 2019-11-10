@@ -1,50 +1,47 @@
-'use strict';
-
-module.exports = {
-  up: function up(queryInterface, Sequelize) {
+"use strict";module.exports = {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('devices', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       notification_id: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       platform: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
       },
       is_actived: {
         type: Sequelize.TINYINT,
         defaultValue: '1',
-        allowNull: false
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
-  down: function down(queryInterface) {
+  down: queryInterface => {
     return queryInterface.dropTable('devices');
-  }
+  },
 };
-//# sourceMappingURL=20191103033516-create-device.js.map

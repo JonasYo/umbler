@@ -1,6 +1,4 @@
-'use strict';
-
-require('../bootstrap');
+"use strict";require('../bootstrap');
 
 module.exports = {
   dialect: 'mysql',
@@ -13,9 +11,9 @@ module.exports = {
   define: {
     timestamps: true,
     underscored: true,
-    underscoredAll: true
+    underscoredAll: true,
   },
-  timezone: '-03:00'
+  timezone: '-03:00',
 };
 
 // module.exports = {
@@ -33,4 +31,3 @@ module.exports = {
 //   },
 //   timezone: '-03:00',
 // };
-//# sourceMappingURL=database.js.map
