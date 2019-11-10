@@ -9,7 +9,7 @@
     "dev": "nodemon -w src --exec \"babel-node src --presets env\"",
     "build-babel": "rimraf dist && babel -d ./dist ./src -s",
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "start": "yarn build && node ./dist/server.js",
+    "start": "node ./dist/server.js",
     "migrate": "yarn sequelize db:migrate",
     "seed": "yarn sequelize db:seed:all",
     "test": "NODE_ENV=test jest --runInBand"
